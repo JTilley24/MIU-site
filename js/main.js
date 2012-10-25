@@ -8,7 +8,8 @@ window.addEventListener("DOMContentLoaded", function(){
 		var element = document.getElementById(x);
 		return element;
 	}
-
+	
+//Parts Categories drop-down
 	function partCats(){
 		var selectLi = $("select");
 			makeSelect = document.createElement("select");
@@ -22,7 +23,8 @@ window.addEventListener("DOMContentLoaded", function(){
 		}
 		selectLi.appendChild(makeSelect);
 	}
-	
+
+//Region value	
 	function getSelectedRadio(){
 		var radios = document.forms[0].region;
 		for(var i=0; i<radios.length; i++){
@@ -31,7 +33,8 @@ window.addEventListener("DOMContentLoaded", function(){
 			}
 		}
 	}
-	
+
+//Toggle display
 	function toggle(n){
 		switch(n){
 			case "on":
@@ -53,7 +56,8 @@ window.addEventListener("DOMContentLoaded", function(){
 		}
 	
 	}
-	
+
+//Save data to local storage
 	function saveData(key){
 		if(!key){
 			var id = Math.floor(Math.random()*1000001);
@@ -72,7 +76,8 @@ window.addEventListener("DOMContentLoaded", function(){
 		localStorage.setItem(id, JSON.stringify(item));
 		alert("Data Saved!");
 	}
-	
+
+//Get Data
 	function getData(){
 		toggle("on");
 		if(localStorage.length === 0){
@@ -106,14 +111,16 @@ window.addEventListener("DOMContentLoaded", function(){
 		}
 	
 	}
-	
+
+//Dummy Data from JSON
 	function autoData(){
 		for(var n in json){
 			var id = Math.floor(Math.random()*1000001);
 			localStorage.setItem(id, JSON.stringify(json[n]));
 		}
 	}
-	
+
+//Region images
 	function getImage(imgName, makeSublist){
 		var imageLi = document.createElement("li");
 		makeSublist.appendChild(imageLi);
@@ -121,7 +128,8 @@ window.addEventListener("DOMContentLoaded", function(){
 		var setSrc = newImg.setAttribute("src", "images/" + imgName + ".png");
 		imageLi.appendChild(newImg);
 	}
-	
+
+//Edit and Delete links
 	function makeItemLinks(key, linksLi){
 		var editLink = document.createElement("a");
 		editLink.href = "#";
@@ -139,7 +147,8 @@ window.addEventListener("DOMContentLoaded", function(){
 		deleteLink.innerHTML = deleteText;
 		linksLi.appendChild(deleteLink);
 	}
-	
+
+//Edit Repair	
 	function editItem(){
 		 var value = localStorage.getItem(this.key);
 		 var item = JSON.parse(value);
@@ -170,6 +179,7 @@ window.addEventListener("DOMContentLoaded", function(){
 	
 	}
 	
+//Validate forms
 	function validate(e){
 		var getGroup = $("groups");
 		var getMake = $("make");
@@ -211,7 +221,8 @@ window.addEventListener("DOMContentLoaded", function(){
 			saveData(this.key);
 		}	
 	}
-	
+
+//Delete Repair	
 	function deleteItem(){
 		var ask = confirm("Are you sure you?");
 		if(ask){
@@ -222,7 +233,8 @@ window.addEventListener("DOMContentLoaded", function(){
 			alert("Repair was NOT deleted.")
 		}
 	}
-	
+
+//Clear local storage
 	function clearData(){
 		if(localStorage.length === 0){
 			alert("No Data!");
@@ -233,8 +245,9 @@ window.addEventListener("DOMContentLoaded", function(){
 			return false;
 		}
 	}
-		
-	var partsGroup = ["--Choose The Parts Category--","Drivetrain", "Body", "Chassis"],
+	
+//Parts Category		
+	var partsGroup = ["--Choose The Parts Category--","Engine", "Body", "Chassis", "Drivetrain", "Interior" ],
 		regionValue,
 		errMsg = $("errors")
 		;
@@ -255,7 +268,8 @@ function $(x){
 	var element = document.getElementById(x);
 	return element;
 };
- 
+
+//Year slider value display
 function showValue(){
            result.innerHTML = $("year").value;
 };   

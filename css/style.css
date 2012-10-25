@@ -5,7 +5,7 @@ VFW Term 1210
 */
 
 body{
-	background: #BFE3DF;
+	background: #E4EDF0;
 }
 
 h1{
@@ -16,13 +16,14 @@ h1{
 }
 
 span{
-	font: 50px arial,sans-serif;
+	font: 45px arial,sans-serif;
 	letter-spacing: -.08em;
 }
 
 p{
 	font-size: 18px;
 	color: #586954;
+	display:inline;
 }
 
 h2{
@@ -73,7 +74,7 @@ fieldset{
 	text-decoration: underline;
 }
 
-a{
+#datastorage a{
 	border: 1px solid black;
 	border-radius: 10px;
 	background: #D6D5E3;
@@ -81,7 +82,7 @@ a{
 	margin: 10px;
 }
 
-nav{
+#datastorage{
 	padding: 10px;
 	background: #B4B8CF;
 	margin-top: 20px
@@ -102,4 +103,48 @@ div ul li{
 
 div ul li ul li > a{
 	line-height: 30px;
+}
+
+#add{
+	border: 1px solid black;
+	border-radius: 10px;
+	background: #D6D5E3;
+	padding: 5px;
+	margin: 10px;
+}
+
+#browse {
+	padding: 0px;
+	margin: 0px;
+	list-style: none;
+	text-align: center;
+	color: blue;
+}
+#browse li{
+	border-bottom: 1px solid #99CCFF;
+	border-top: 1px solid #99CCFF;
+    padding: 7px 12px;
+	background-image: -webkit-gradient(radial, center center, 0, center center, 180, color-stop(0, #FFFFFF), color-stop(1, #035FFF));
+
+}
+#browse li a{
+	color: #343536;
+	font-size: 20px;
+    font-weight: 600;
+}
+#searchbox{
+	padding: 10px;
+}
+#search{
+	font-size: 12px;
+    color: #999;
+    padding: 4px 10px 5px 30px;
+    width: 140px;
+    border: 1px solid gray;
+}
+
+#searchsubmit{
+	border: 1px solid #00748f;
+	height: 28px;
+	width: 65px;
 }
