@@ -1,31 +1,534 @@
-<!DOCTYPE html>
-<!--Justin Tilley Project 1 MIU Term 1211-->
-<html>
-	<head>
-		<meta charset="utf-8" />
-		<meta name="description" content="First HTML5 document" />
-		<meta name="keywords" content="html5, mobile developement, Full Sail University" />
-		<meta name="robots" content="index, follow" />
-		<meta name="viewport" content="user-scalable=no, width=device-width" />
-		<title>DIY Vehicle Repair</title>
-		<link href="css/style.css" rel="stylesheet" />
-	</head>
-	<body>
-		<header>
-			<a href="additem.html" ><img src="images/cta.png" width=100% height=20%></a>
-		</header>
-		<form id="searchbox">
-  			<input id="search" type="text" placeholder="Search Repairs">
-    		<input id="searchsubmit" type="submit" value="Search">
-		</form>
-		<div id=browse>
-			<ul><h2>Browse Parts Category</h2>
-				<li><a href="#">Engine</a></li>
-				<li><a href="#">Body</a></li>
-				<li><a href="#">Drivetrain</a></li>
-				<li><a href="#">Chassis</a></li>
-				<li><a href="#">Interior</a></li>
+<!doctype html>  
+<html lang="en">
+<head>
+
+	<meta charset="utf-8">
+	
+	<title>DIY Vehicle Repair</title>
+	
+	<!--  Mobile viewport optimized: j.mp/bplateviewport -->
+	<meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<!-- Mobile IE needs ClearType for smoothing fonts -->
+	<meta http-equiv="cleartype" content="on">
+	
+	<!-- StyleSheets under here -->
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+	<link href="css/style.css" rel="stylesheet" />
+	<link href="css/DIYRepair.min.css" rel="stylesheet">
+	
+	<!-- JavaScript is normally at the end of the body, except for Modernizr which enables HTML5 elements & feature detects -->
+	<script src="js/libs/modernizr.custom.min.js"></script>
+	
+	
+</head>
+
+<body>
+
+	<div data-role="page" id="home">
+	
+		<div data-role="header" data-position="fixed">
+			<h1>DIY Vehicle Repair</h1>
+			<div data-role="navbar">
+					<ul>
+						<li><a href="#home">Home</a></li>
+						<li><a href="#about">About</a></li>
+						<li><a href="additem.html" rel="external">Add Repair</a></li>
+					</ul>
+				</div>
+		</div>
+		<div data-role="content" id="browse">
+			<a href="additem.html" rel="external"><img src="images/cta.png" width=100% height=20%></a>
+			<h2>Browse Categories</h2>
+			<div data-role="listview" data-insert="true" data-filter="true" class="ui-grid-d" id="category">
+				<div class="ui-block-a"><a href="#body"><img src="images/body.jpg"></a><h3>Body</h3></div>
+				<div class="ui-block-b"><a href="#chassis"><img src="images/chassis.jpg"></a><h3>Chassis</div>
+				<div class="ui-block-c"><a href="#drivetrain"><img src="images/transmission.jpg"></a><h3>Drivetrain</h3></div>
+				<div class="ui-block-a"><a href="#engine"><img src="images/engine.png"></a><h3>Engine</h3></div>
+				<div class="ui-block-b"><a href="#interior"><img src="images/interior.jpg"></a><h3>Interior</h3></div>
+			</div>
+		</div>
+		
+		<div data-role="footer" data-position="fixed">
+		</div>
+	</div>
+	
+	<div data-role="page" id="about" data-add-back-btn="true">
+	
+		<div data-role="header" data-position="fixed">
+			<h1>DIY Vehicle Repair</h1>
+			<div data-role="navbar">
+					<ul>
+						<li><a href="#home">Home</a></li>
+						<li><a href="#about">About</a></li>
+						<li><a href="additem.html" rel="external">Add Repair</a></li>
+					</ul>
+				</div>
+		</div>
+		<div data-role="content">
+			<ul>
+				<li><a href="#home">Home</a></li>
+				<li><a href="https://github.com/JTilley24/MIU-site/tree/master/Project%202" data-url>Git</a></li>
+				<li><a href="file:///Users/Tilley/Desktop/MIU%202/Project%202/GOLD/index.html">Gold</a></li>
+				<li><a href="file:///Users/Tilley/Desktop/MIU%202/Project%202/BRONZE/index.html" rel="external">Bronze</a></li>
+			</ul>
+			<p>Images courtesy of Advanceautoparts.com</p>
+		
+		</div>
+	</div>
+		
+	<div data-role="page" id="engine" data-add-back-btn="true">
+		<div data-role="header" data-position="fixed">
+			<h1>Engine</h1>
+			<div data-role="navbar">
+					<ul>
+						<li><a href="#home">Home</a></li>
+						<li><a href="#about">About</a></li>
+						<li><a href="additem.html" rel="external">Add Repair</a></li>
+					</ul>
+				</div>
+		</div>	
+		<div data-role="content">
+			<ul data-role="listview" data-filter="true">
+				<li><a href="#cobra"><img src="images/engine.png">1966 Shelby AC Cobra</a></li>
+				<li><a href="#galant"><img src="images/engine.png">1994 Mitsubishi Galant</a></li>
+				<li><a href="#sonata"><img src="images/engine.png">2006 Hyundai Sonata</a></li>
 			</ul>
 		</div>
-	</body>
-</html> 
+	</div>
+	
+	<div data-role="page" id="cobra" data-add-back-btn="true">
+		<div data-role="header" data-position="fixed">
+			<h1>1966 Shelby Cobra</h1>
+			<div data-role="navbar">
+					<ul>
+						<li><a href="#home">Home</a></li>
+						<li><a href="#about">About</a></li>
+						<li><a href="additem.html" rel="external">Add Repair</a></li>
+					</ul>
+				</div>
+		</div>	
+		<div data-role="content">
+			<ul>
+				<li>Region: European</li>
+				<li>Make: Shelby</li>
+				<li>Model: AC Cobra</li>
+				<li>Year: 1966</li>
+				<li>Date for repair: 2013-3-03</li>
+				<li>Description: oil change</li>
+			</ul>
+		</div>
+	</div>	
+	
+	<div data-role="page" id="galant" data-add-back-btn="true">
+		<div data-role="header" data-position="fixed">
+			<h1>1994 Mitsubishi Galant</h1>
+			<div data-role="navbar">
+					<ul>
+						<li><a href="#home">Home</a></li>
+						<li><a href="#about">About</a></li>
+						<li><a href="additem.html" rel="external">Add Repair</a></li>
+					</ul>
+				</div>
+		</div>	
+		<div data-role="content">
+			<ul>
+				<li>Region: Asian</li>
+				<li>Make: Mitsubishi</li>
+				<li>Model: Galant</li>
+				<li>Year: 1994</li>
+				<li>Date for repair: 2012-11-13</li>
+				<li>Description: exhaust</li>
+			</ul>
+		</div>
+	</div>
+
+	<div data-role="page" id="sonata" data-add-back-btn="true">
+		<div data-role="header" data-position="fixed">
+			<h1>2006 Hyundai Sonata</h1>
+			<div data-role="navbar">
+					<ul>
+						<li><a href="#home">Home</a></li>
+						<li><a href="#about">About</a></li>
+						<li><a href="additem.html" rel="external">Add Repair</a></li>
+					</ul>
+				</div>
+		</div>	
+		<div data-role="content">
+			<ul>
+				<li>Region: Asian</li>
+				<li>Make: Hyundai</li>
+				<li>Model: Sonata</li>
+				<li>Year: 2006</li>
+				<li>Date for repair: 2013-1-27</li>
+				<li>Description: sparkplugs</li>
+			</ul>
+		</div>
+	</div>
+	<div data-role="page" id="drivetrain" data-add-back-btn="true">
+		<div data-role="header" data-position="fixed">
+			<h1>Drivetrain</h1>
+			<div data-role="navbar">
+					<ul>
+						<li><a href="#home">Home</a></li>
+						<li><a href="#about">About</a></li>
+						<li><a href="additem.html" rel="external">Add Repair</a></li>
+					</ul>
+				</div>
+		</div>	
+		<div data-role="content">
+			<ul data-role="listview" data-filter="true">
+				<li><a href="#corvette"><img src="images/transmission.jpg">1980 Chevy Corvette</a></li>
+				<li><a href="#chrysler"><img src="images/transmission.jpg">2000 Chrysler Town and Country</a></li>
+				<li><a href="#civic"><img src="images/transmission.jpg">2001 Honda Civic</a></li>
+			</ul>
+		</div>
+	</div>
+	
+	<div data-role="page" id="civic" data-add-back-btn="true">
+		<div data-role="header" data-position="fixed">
+			<h1>2001 Honda Civic</h1>
+			<div data-role="navbar">
+					<ul>
+						<li><a href="#home">Home</a></li>
+						<li><a href="#about">About</a></li>
+						<li><a href="additem.html" rel="external">Add Repair</a></li>
+					</ul>
+				</div>
+		</div>	
+		<div data-role="content">
+			<ul>
+				<li>Region: Asian</li>
+				<li>Make: Honda</li>
+				<li>Model: Civic</li>
+				<li>Year: 2001</li>
+				<li>Date for repair: 2012-11-17</li>
+				<li>Description: replace transmission</li>
+			</ul>
+		</div>
+	</div>
+	
+	<div data-role="page" id="chrysler" data-add-back-btn="true">
+		<div data-role="header" data-position="fixed">
+			<h1>2000 Chrysler Town and Country</h1>
+			<div data-role="navbar">
+					<ul>
+						<li><a href="#home">Home</a></li>
+						<li><a href="#about">About</a></li>
+						<li><a href="additem.html" rel="external">Add Repair</a></li>
+					</ul>
+				</div>
+		</div>	
+		<div data-role="content">
+			<ul>
+				<li>Region: Domestic</li>
+				<li>Make: Chrysler</li>
+				<li>Model: Town and Country</li>
+				<li>Year: 2000</li>
+				<li>Date for repair: 2013-1-18</li>
+				<li>Description: sparkplugs</li>
+			</ul>
+		</div>
+	</div>
+	
+	<div data-role="page" id="corvette" data-add-back-btn="true">
+		<div data-role="header" data-position="fixed">
+			<h1>1980 Chevy Corvette</h1>
+			<div data-role="navbar">
+					<ul>
+						<li><a href="#home">Home</a></li>
+						<li><a href="#about">About</a></li>
+						<li><a href="additem.html" rel="external">Add Repair</a></li>
+					</ul>
+				</div>
+		</div>	
+		<div data-role="content">
+			<ul>
+				<li>Region: Domestic</li>
+				<li>Make: Chevy</li>
+				<li>Model: Corvette</li>
+				<li>Year: 1980</li>
+				<li>Date for repair: 2013-2-27</li>
+				<li>Description: speedometer cable</li>
+			</ul>
+		</div>
+	</div>
+	
+	<div data-role="page" id="chassis" data-add-back-btn="true">
+		<div data-role="header" data-position="fixed">
+			<h1>Chassis</h1>
+			<div data-role="navbar">
+					<ul>
+						<li><a href="#home">Home</a></li>
+						<li><a href="#about">About</a></li>
+						<li><a href="additem.html" rel="external">Add Repair</a></li>
+					</ul>
+				</div>
+		</div>	
+		<div data-role="content">
+			<ul data-role="listview" data-filter="true">
+				<li><a href="#blazer"><img src="images/chassis.jpg">1996 Chevy Blazer</a></li>
+				<li><a href="#bmwz4"><img src="images/chassis.jpg">1998 BMW Z4</a></li>
+				<li><a href="#s500"><img src="images/chassis.jpg">2003 Mercedes-Benz S500</a></li>
+			</ul>
+		</div>
+	</div>
+	
+	<div data-role="page" id="blazer" data-add-back-btn="true">
+		<div data-role="header" data-position="fixed">
+			<h1>1996 Chevy Blazer</h1>
+			<div data-role="navbar">
+					<ul>
+						<li><a href="#home">Home</a></li>
+						<li><a href="#about">About</a></li>
+						<li><a href="additem.html" rel="external">Add Repair</a></li>
+					</ul>
+				</div>
+		</div>	
+		<div data-role="content">
+			<ul>
+				<li>Region: Domestic</li>
+				<li>Make: Chevy</li>
+				<li>Model: Blazer</li>
+				<li>Year: 1996</li>
+				<li>Date for repair: 2012-10-28</li>
+				<li>Description: ball-joints</li>
+			</ul>
+		</div>
+	</div>
+	
+	<div data-role="page" id="s500" data-add-back-btn="true">
+		<div data-role="header" data-position="fixed">
+			<h1>2003 Mercedes-Benz S500</h1>
+			<div data-role="navbar">
+					<ul>
+						<li><a href="#home">Home</a></li>
+						<li><a href="#about">About</a></li>
+						<li><a href="additem.html" rel="external">Add Repair</a></li>
+					</ul>
+				</div>
+		</div>	
+		<div data-role="content">
+			<ul>
+				<li>Region: European</li>
+				<li>Make: Mercedes-Benz</li>
+				<li>Model: S500</li>
+				<li>Year: 2003</li>
+				<li>Date for repair: 2012-12-03</li>
+				<li>Description: tire rotation</li>
+			</ul>
+		</div>
+	</div>
+	
+	<div data-role="page" id="bmwz4" data-add-back-btn="true">
+		<div data-role="header" data-position="fixed">
+			<h1>1998 BMW Z4</h1>
+			<div data-role="navbar">
+					<ul>
+						<li><a href="#home">Home</a></li>
+						<li><a href="#about">About</a></li>
+						<li><a href="additem.html" rel="external">Add Repair</a></li>
+					</ul>
+				</div>
+		</div>	
+		<div data-role="content">
+			<ul>
+				<li>Region: European</li>
+				<li>Make: BMW</li>
+				<li>Model: Z4</li>
+				<li>Year: 1998</li>
+				<li>Date for repair: 2013-1-10</li>
+				<li>Description: steering rack</li>
+			</ul>
+		</div>
+	</div>
+	
+	<div data-role="page" id="interior" data-add-back-btn="true">
+		<div data-role="header" data-position="fixed">
+			<h1>Interior</h1>
+			<div data-role="navbar">
+					<ul>
+						<li><a href="#home">Home</a></li>
+						<li><a href="#about">About</a></li>
+						<li><a href="additem.html" rel="external">Add Repair</a></li>
+					</ul>
+				</div>
+		</div>	
+		<div data-role="content">
+			<ul data-role="listview" data-filter="true">
+				<li><a href="#transam"><img src="images/interior.jpg">1967 Pontiac Trans Am</a></li>
+				<li><a href="#skyline"><img src="images/interior.jpg">1989 Nissan Skyline</a></li>
+				<li><a href="#lexus"><img src="images/interior.jpg">1999 Lexus LS 400</a></li>
+			</ul>
+		</div>
+	</div>
+	
+	<div data-role="page" id="transam" data-add-back-btn="true">
+		<div data-role="header" data-position="fixed">
+			<h1>1967 Pontiac Trans Am</h1>
+			<div data-role="navbar">
+					<ul>
+						<li><a href="#home">Home</a></li>
+						<li><a href="#about">About</a></li>
+						<li><a href="additem.html" rel="external">Add Repair</a></li>
+					</ul>
+				</div>
+		</div>	
+		<div data-role="content">
+			<ul>
+				<li>Region: Domestic</li>
+				<li>Make: Pontiac</li>
+				<li>Model: Trans Am</li>
+				<li>Year: 1967</li>
+				<li>Date for repair: 2013-2-03</li>
+				<li>Description: seats</li>
+			</ul>
+		</div>
+	</div>
+	
+	<div data-role="page" id="skyline" data-add-back-btn="true">
+		<div data-role="header" data-position="fixed">
+			<h1>1989 Nissan Skyline</h1>
+			<div data-role="navbar">
+					<ul>
+						<li><a href="#home">Home</a></li>
+						<li><a href="#about">About</a></li>
+						<li><a href="additem.html" rel="external">Add Repair</a></li>
+					</ul>
+				</div>
+		</div>	
+		<div data-role="content">
+			<ul>
+				<li>Region: Asian</li>
+				<li>Make: Nissan</li>
+				<li>Model: Skyline</li>
+				<li>Year: 1989</li>
+				<li>Date for repair: 2013-4-27</li>
+				<li>Description: cage</li>
+			</ul>
+		</div>
+	</div>
+	
+	<div data-role="page" id="lexus" data-add-back-btn="true">
+		<div data-role="header" data-position="fixed">
+			<h1>1999 Lexus LS 400</h1>
+			<div data-role="navbar">
+					<ul>
+						<li><a href="#home">Home</a></li>
+						<li><a href="#about">About</a></li>
+						<li><a href="additem.html" rel="external">Add Repair</a></li>
+					</ul>
+				</div>
+		</div>	
+		<div data-role="content">
+			<ul>
+				<li>Region: Asian</li>
+				<li>Make: Lexus</li>
+				<li>Model: LS 400</li>
+				<li>Year: 1999</li>
+				<li>Date for repair: 2013-5-10</li>
+				<li>Description: steering wheel</li>
+			</ul>
+		</div>
+	</div>
+	
+	<div data-role="page" id="body" data-add-back-btn="true">
+		<div data-role="header" data-position="fixed">
+			<h1>Body</h1>
+			<div data-role="navbar">
+					<ul>
+						<li><a href="#home">Home</a></li>
+						<li><a href="#about">About</a></li>
+						<li><a href="additem.html" rel="external">Add Repair</a></li>
+					</ul>
+				</div>
+		</div>	
+		<div data-role="content">
+			<ul data-role="listview" data-filter="true">
+				<li><a href="#impreza"><img src="images/body.jpg">1996 Subaru Impreza</a></li>			
+				<li><a href="#ram"><img src="images/body.jpg">2000 Dodge Ram 1500</a></li>	
+				<li><a href="#silverado"><img src="images/body.jpg">2003 Chevy Silverado 1500</a></li>
+			</ul>
+		</div>
+	</div>
+	
+	<div data-role="page" id="ram" data-add-back-btn="true">
+		<div data-role="header" data-position="fixed">
+			<h1>2000 Dodge Ram 1500</h1>
+			<div data-role="navbar">
+					<ul>
+						<li><a href="#home">Home</a></li>
+						<li><a href="#about">About</a></li>
+						<li><a href="additem.html" rel="external">Add Repair</a></li>
+					</ul>
+				</div>
+		</div>	
+		<div data-role="content">
+			<ul>
+				<li>Region: Domestic</li>
+				<li>Make: Dodge</li>
+				<li>Model: Ram 1500</li>
+				<li>Year: 2000</li>
+				<li>Date for repair: 2012-11-13</li>
+				<li>Description: rear passenger wheel well</li>
+			</ul>
+		</div>
+	</div>
+	
+	<div data-role="page" id="silverado" data-add-back-btn="true">
+		<div data-role="header" data-position="fixed">
+			<h1>2003 Chevy Silverado 1500</h1>
+			<div data-role="navbar">
+					<ul>
+						<li><a href="#home">Home</a></li>
+						<li><a href="#about">About</a></li>
+						<li><a href="additem.html" rel="external">Add Repair</a></li>
+					</ul>
+				</div>
+		</div>	
+		<div data-role="content">
+			<ul>
+				<li>Region: Domestic</li>
+				<li>Make: Chevy</li>
+				<li>Model: Silverado 1500</li>
+				<li>Year: 2003</li>
+				<li>Date for repair: 2012-12-15</li>
+				<li>Description: tire rotation</li>
+			</ul>
+		</div>
+	</div>
+	
+	<div data-role="page" id="impreza" data-add-back-btn="true">
+		<div data-role="header" data-position="fixed">
+			<h1>1996 Subaru Impreza</h1>
+			<div data-role="navbar">
+					<ul>
+						<li><a href="#home">Home</a></li>
+						<li><a href="#about">About</a></li>
+						<li><a href="additem.html" rel="external">Add Repair</a></li>
+					</ul>
+				</div>
+		</div>	
+		<div data-role="content">
+			<ul>
+				<li>Region: Asian</li>
+				<li>Make: Subaru</li>
+				<li>Model: Impreza</li>
+				<li>Year: 1996</li>
+				<li>Date for repair: 2012-12-30</li>
+				<li>Description: rear drivers quarter panel</li>
+			</ul>
+		</div>
+	</div>
+
+	
+	<!-- JavaScript under here -->
+	<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+	<script src="js/json.js" type="text/javascript"></script>
+	<script src="js/main.js" type="text/javascript"></script>
+
+</body>
+</html>
