@@ -15,6 +15,14 @@ header h1{
 	border: 1px solid blue;
 }
 
+fieldset{
+	line-height: 30px;
+	font-size: 18px;
+	color: blue;
+	border: 1px solid black;
+	border-radius: 10px;
+	background: #C3D0DB;
+}
 
 fieldset ul{
 	list-style: none;
@@ -28,6 +36,44 @@ fieldset ul{
 	color: gray;
 }
 
+#make{
+	margin-left: 8px;
+}
+
+#groups{
+	margin-left: 20px;
+}
+
+#result{
+	border: 1px solid gray;
+	background: white;
+	padding: 2px;
+	margin-left: 10px;
+}
+
+#comments{
+	margin-left: 40px;
+}
+
+#submit{
+	margin-left: 20px;
+	font-size: 20px;
+	text-decoration: underline;
+}
+
+#datastorage a{
+	border: 1px solid black;
+	border-radius: 10px;
+	background: #D6D5E3;
+	padding: 5px;
+	margin: 10px;
+}
+
+#datastorage{
+	padding: 10px;
+	background: #B4B8CF;
+	margin-top: 20px
+}
 
 #searchbox{
 	padding: 10px;
@@ -49,34 +95,4 @@ fieldset ul{
 	width: 65px;
 }
 
-label.error{
-	display: block;
-	margin: 10px;
-	color: red;
-}
 
-#pastlist li p{
-	text-align: right;
-	color: grey;
-}
-
-#pastlist li h4{
-	font-size: 12px;
-}
-
-#additem div p{
-	font-size: 9px;
-	color: grey;
-
-}
-
-#region p{
-	display: inline;
-	margin-left: 10px;
-
-}
-
-#year{
-	display: inline;
-	width: 20%;
-}
